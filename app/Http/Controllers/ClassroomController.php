@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+//use App\Http\Requests\ClassroomRequest;
 
 class ClassroomController extends Controller
 {
@@ -44,7 +45,7 @@ class ClassroomController extends Controller
     public function store(Request $request)
     {
         Classroom::create($request->all());
-        return redirect('/classroom');
+        return redirect('classroom.show');
     }
 
     /**
@@ -79,7 +80,7 @@ class ClassroomController extends Controller
     public function update(Request $request, Classroom $classroom)
     {
         $classroom->update($request->all());
-        return redirect('/classroom');
+        return redirect('classroom.index');
     }
 
     /**

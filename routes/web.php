@@ -14,6 +14,18 @@ use \App\Http\Controllers\ClassroomController;
 |
 */
 
-Route::get('/classroom',[ClassroomController::class,'index']);
+//Route::get('/',[ClassroomController::class,'index']);
+
+//Route::post('/classroom',[ClassroomController::class,'store']);
+
+//Route::get('/classroom/create',[ClassroomController::class,'create']);
+
+//Route::get('classroom/{classroom}',[ClassroomController::class,'show']);
+
+//Route::put('/classroom/{classroom->id}',[ClassroomController::class,'update']);
+
+//Route::delete('/classroom/{classroom->id}',[ClassroomController::class,'destroy']);
+
+//Route::get('/classroom/{classroom->id}/edit',[ClassroomController::class,'edit']);
 
 Route::resource('classroom',ClassroomController::class);

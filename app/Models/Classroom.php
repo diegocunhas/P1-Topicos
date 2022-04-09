@@ -9,5 +9,5 @@ class Classroom extends Model
 {
     use HasFactory;
 
-    protected $filables = ['id','nome','capacidade','tipo'];
+    protected $fillable = ['id','nome','capacidade','tipo'];
 }

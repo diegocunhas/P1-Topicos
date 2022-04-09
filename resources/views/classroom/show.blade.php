@@ -4,13 +4,13 @@
 			<div class="col-sm-6">
 				<dl>
 					<dt>Nome</dt>
-					<dd>{{$funcionario->nome}}</dd>
+					<dd>{{$dados->nome}}</dd>
 					<dt>Capacidade</dt>
-					<dd>{{$funcionario->capacidade}}</dd>
+					<dd>{{$dados->capacidade}}</dd>
 					<dt>Tipo</dt>
-					<dd>{{$funcionario->tipo}}</dd>
+					<dd>{{$dados->tipo}}</dd>
 				</dl>
-				<form action="/funcionario/{{$funcionario->id}}" method="post">
+				<form action="/classroom/{{$dados->id}}" method="post">
 					@csrf
 					@method('DELETE')
 					<input type="submit" value="Confirmar" class="btn btn-primary btn-sm">
