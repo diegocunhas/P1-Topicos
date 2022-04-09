@@ -1,0 +1,70 @@
+Criar modelos para marca, automovel, e modalidade
+
+Models
+
+php artisan make:model Marca --controller --resource  --factory --migration
+php artisan make:model Automovel  --controller --resource  --factory --migration
+php artisan make:model Motorista  --controller --resource  --factory --migration
+
+depois ir na pasta models dentro de app
+e adicionar seus atributos
+
+Migrate
+
+verifique se a migrações pendentes
+
+php artisan migrate:status
+
+realizer as migrações pendentes
+
+php artisan migrate
+
+migração parar operar tabela já existente
+
+php artisan make:migration AdiocionarMarcaAutomovel --table=automovels
+
+
+
+
+
+
+
+
+
+
+        <?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AdiocionarMarcaAutomovel extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('automovels', function (Blueprint $table) {
+            $table->bigInteger('marca_id')->unsigned();
+            $table->foreign('marca_id')->references('id')->on('marcas');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('automovels', function (Blueprint $table) {
+            $table->dropForeign('marca_id');
+            $table->dropColumn('marca_id');
+
+        });
+    }
+}
+            
